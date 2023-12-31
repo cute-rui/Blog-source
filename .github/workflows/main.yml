@@ -1,0 +1,26 @@
+name: Build
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  checks: write
+  contents: write
+  deployments: write
+  issues: write
+  packages: write
+  pull-requests: write
+  repository-projects: write
+  security-events: write
+  statuses: write
+
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Build
+        run: |
+        curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/a03f7508-adac-40df-92ef-f7d9da9ca425"
