@@ -22,4 +22,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Call Build
-        run: curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/a03f7508-adac-40df-92ef-f7d9da9ca425"
+        run: curl -X POST ${{ secrets.CLOUDFLARE_URL }}
